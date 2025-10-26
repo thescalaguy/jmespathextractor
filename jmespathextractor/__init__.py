@@ -1,3 +1,5 @@
+import typing
+
 import jmespath
 
 
@@ -13,7 +15,7 @@ class Extractor:
     def __init__(self, mapping: dict[str, str]):
         self.mapping = {k: jmespath.compile(v) for k, v in mapping.items()}
 
-    def extract(self, instance: dict):
+    def extract(self, instance: dict) -> dict[str, typing.Any]:
         return {k: expr.search(instance) for k, expr in self.mapping.items()}
 
 
