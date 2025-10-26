@@ -2,6 +2,12 @@
 
 Extract values from deeply-nested JSON using JMESPath expressions.  
 
+## Installation
+
+```shell
+pip install jmespathextractor
+```
+
 ## Usage
 
 ```python
